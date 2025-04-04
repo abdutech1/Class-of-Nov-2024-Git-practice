@@ -336,6 +336,43 @@ And delete the hello-world-images branch:
 git branch -d hello-world-images
 
 
+Git And GitHub
+
+GitHub Account
+Go to GitHub and sign up for an account
+
+Note: Remember to use the same e-mail address you used in the Git config.
+
+Now that you have made a GitHub account, sign in, and create a new Repo
+
+Push Local Repository to GitHub
+Since we have already set up a local Git repo, we are going to push that to GitHub.
+
+Copy the URL ### https://github.com/<yourusername/<the name of your repo>.git
+And paste it the following command.
+
+git remote add origin https://github.com/<yourusername/<the name of your repo>.git
+
+git remote add origin URL specifies that you are adding a remote repository, with the specified URL, as an origin to your local Git repo
+
+Now we are going to push our master branch to the origin url, and set it as the default remote branch
+
+git push --set-upstream origin master
+
+git push -u origin master
+
+
+
+Explanation of parts:
+git push: Push your commits to a remote repository.
+
+--set-upstream (or -u): Sets the tracking relationship between your local branch and the remote branch. This means in the future, you can just run git push or git pull without needing to specify the branch name.
+
+origin: The default name of the remote repository (usually the one you cloned from).
+
+master: The name of the branch you're pushing
+
+
 
 
 
