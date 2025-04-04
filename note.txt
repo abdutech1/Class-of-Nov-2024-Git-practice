@@ -363,6 +363,8 @@ git push -u origin master
 
 
 
+
+
 Explanation of parts:
 git push: Push your commits to a remote repository.
 
@@ -387,7 +389,6 @@ Let's try to edit the README.md file in GitHub. Just click the edit button
 Add some changes to the code, and then commit the changes. For now, we will "Commit directly to the master branch".
 
 Remember to add a description for the commit.
-
 
 
 
@@ -455,6 +456,123 @@ Make another change to the Readme.md file on GitHub
 Use pull to update our local Git:
 
 git pull origin
+
+
+
+
+Create a New Branch on GitHub
+On GitHub, access your repository and click the "master" branch button.
+
+There you can create a new Branch. Type in a descriptive name, and click Create branch:
+
+The branch should now be created and active. You can confirm which branch you are working on by looking at the branch button. See that it now says "html-skeleton" instead of "master"?
+
+Start working on an existing file in this branch. Click the "index.html" file and start editing:
+
+After you have finished editing the file, you can click the "Preview changes" tab to see the changes you made highlighted:
+
+
+If you are happy with the change, add a comment that explains what you did, and click Commit changes.
+
+You now have a new branch on GitHub, updated with some changes!
+
+
+Pulling a Branch from GitHub
+Now continue working on our new branch in our local Git.
+
+Lets pull from our GitHub repository again so that our code is up-to-date:
+
+git pull
+
+Now our main branch is up todate. And we can see that there is a new branch available on GitHub.
+
+Do a quick status check:
+
+git status
+
+
+And confirm which branches we have, and where we are working at the moment:
+
+git branch
+
+
+So, we do not have the new branch on our local Git. But we know it is available on GitHub. So we can use the -a option to see all local and remote branches:
+
+git branch -a
+
+
+Note: branch -r is for remote branches only.
+
+
+
+We see that the branch html-skeleton is available remotely, but not on our local git. Lets check it out:
+
+git checkout html-skeleton
+
+
+And check if it is all up to date:
+
+git pull
+
+Which branches do we have now, and where are we working from?
+
+
+git branch
+
+Now, open your favourite editor and confirm that the changes from the GitHub branch carried over.
+
+That is how you pull a GitHub branch to your local Git.
+
+
+
+Push a Branch to GitHub
+Let's try to create a new local branch, and push that to GitHub.
+
+Start by creating a branch, like we did earlier:
+
+git checkout -b update-readme
+
+
+And we make some changes to the README.md file. Just add a new line.
+
+So now we check the status of the current branch.
+
+And we make some changes to the README.md file. Just add a new line.
+
+So now we check the status of the current branch.
+
+git status
+
+We see that README.md is modified but not added to the Staging Environment:
+
+git add README.md
+
+git commit -m "Updated readme for GitHub Branches"
+
+
+Now push the branch from our local Git repository, to GitHub, where everyone can see the changes:
+
+git push origin update-readme
+
+
+Go to GitHub, and confirm that the repository has a new branch:
+
+In GitHub, we can now see the changes and merge them into the master branch if we approve it.
+
+If you click the "Compare & pull request", you can go through the changes made and new files added:
+
+
+Note: This comparison shows both the changes from update-readme and html-skeleton because we created the new branch FROM html-skeleton.
+
+If the changes look good, you can go forward, creating a pull request:
+
+A pull request is how you propose changes. You can ask some to review your changes or pull your contribution and merge it into their branch.
+
+Since this is your own repository, you can  merge your pull request yourself:
+
+The pull request will record the changes, which means you can go through them later to figure out the changes made.
+
+To keep the repo from getting overly complicated, you can delete the now unused branch by clicking "Delete branch".
 
 
 
