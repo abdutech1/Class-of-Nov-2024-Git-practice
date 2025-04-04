@@ -391,6 +391,74 @@ Remember to add a description for the commit.
 
 
 
+Pulling to Keep up-to-date with Changes 
+
+When working as a team on a project, it is important that everyone stays up to date.
+
+Any time you start working on a project, you should get the most recent changes to your local copy.
+
+With Git, you can do that with pull.
+
+pull is a combination of 2 different commands:
+
+fetch
+merge 
+
+
+git fetch: This contacts the remote repo and grabs any new changes, but doesn’t change your working files — it's safe to run.
+
+Now that we have the recent changes, we can check our status:
+
+git status: After fetching, this will tell you the current state compared to the remote branch
+
+We are behind the origin/master by 1 commit. That should be the updated README.md, but lets double check by viewing the log:
+
+git log origin/master //
+git log origin/master --oneline
+
+
+This command shows the commit history of the origin/master branch — that is, the version of master that's on the remote repository, as of your last git fetch.
+
+So basically, you're saying:
+
+"Hey Git, show me the log of the commits on the remote's master branch (origin/master)."
+
+"
+
+💡 Important Notes:
+origin/master is not the live remote repo — it's a local copy of the remote branch, updated when you run git fetch.
+
+So if you haven’t fetched recently, you might not be seeing the latest remote changes.
+
+We can also verify by showing the differences between our local master and origin/master:
+
+ git diff origin/master
+
+
+ Git Merge
+merge combines the current branch, with a specified branch.
+
+We have confirmed that the updates are as expected, and we can merge our current branch (master) with origin/master
+
+git merge origin/master
+
+git status
+
+
+Git Pull
+But what if you just want to update your local repository, without going through all those steps?
+
+pull is a combination of fetch and merge. It is used to pull all changes from a remote repository into the branch you are working on.
+
+Make another change to the Readme.md file on GitHub
+
+Use pull to update our local Git:
+
+git pull origin
+
+
+
+
 
 
 
