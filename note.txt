@@ -373,6 +373,11 @@ origin: The default name of the remote repository (usually the one you cloned fr
 master: The name of the branch you're pushing
 
 
+Note: Since this is the first time you are connecting to GitHub, you will get some kind of notification you to authenticate this connection.
+
+Now, go back into GitHub and see that the repository has been updated
+
+
 
 
 
