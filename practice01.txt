@@ -1,0 +1,68 @@
+Task 1: Set Up Git Configuration
+1. Set your Git username to your actual name and email to your real email address (replace example with your details).
+
+Task 2: Initialize a Git Repository
+1. Create a new folder on your system called git-practice.
+
+2. Inside the git-practice folder, initialize a Git repository.
+
+3. Confirm that Git has initialized by checking the status
+
+Task 3: Add Files to the Repository
+1. Inside the git-practice folder, create the following files:
+
+index.html
+
+style.css
+
+README.md
+
+2. Use a text editor to add content to these files:
+
+In index.html, add some simple HTML (e.g., <h1>Hello Git!</h1>).
+
+In style.css, add a basic CSS rule to style the h1 (e.g., h1 { color: blue; }).
+
+In README.md, write a short description of the project.
+
+3. Add these files to the Git staging area
+
+4. Check the status again to confirm the files are staged.
+
+Task 4: Make a Commit
+1. Commit your changes with a meaningful message.
+2. View the commit log
+
+
+Task 5: Create and Switch to a New Branch
+1. Create a new branch called feature-new-image.
+
+2. Switch to the feature-new-image branch.
+
+3. Add a new file called image.jpg to the git-practice folder.
+
+4. Stage and commit the new image.
+
+
+Task 6: Switch Back to Master and Merge
+1. Switch back to the master branch
+
+2. Merge the feature-new-image branch into master
+
+Task 7: Create a Merge Conflict
+1. Go back to the feature-new-image branch
+2. Modify index.html by adding a new <p> tag (e.g., <p>This is a feature page.</p>).
+
+3. Switch back to the master branch and make a conflicting change to index.html (e.g., <p>This is the main page.</p>).
+
+4. Try to merge feature-new-image into master.
+5. This will result in a merge conflict. Check the status.
+
+6. Open index.html and fix the conflict by choosing one of the changes or combining both.
+
+7. After resolving the conflict, add the file to the staging area and commit
+
+
+Task 8: Clean Up
+1. Delete the feature-new-image branch, since the work is complete
+

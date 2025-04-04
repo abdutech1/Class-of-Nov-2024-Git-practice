@@ -1,0 +1,342 @@
+Git and GitHub
+
+
+In simple terms, Git is a software that tracks the changes you make to files, to be specific, it tracks the changes you make in your code. By tracking it is meant that Git will record every change you make in a file and saves the different versions of the file. If you want to look at a specific version of your file, you can go back and see that version. 
+
+Or It is used for:
+
+Tracking code changes
+Tracking who made changes
+Coding collaboration
+
+
+Using Git with Command Line
+
+Configure Git
+Now let Git know who you are. This is important for version control systems, as each Git commit uses this information
+
+git config --global user.name "example"
+git config --global user.email "example@gmail.com"
+
+Change the user name and e-mail address to your own. You will probably also want to use this when registering to GitHub later on.
+
+Initialize Git
+Once you have navigated to the correct folder, you can initialize Git on that folder:
+
+git init
+
+You just created your first Git Repository!
+
+Note: Git now knows that it should watch the folder you initiated it on.
+
+The .git directory: This the directory/folder where Git stores the information about your project.
+
+The .git directory does the following:   
+• Remote information (to which remote server your project is connected)  
+• History of all local commits  
+• Branch information (on which branch is your current project state (HEAD) 
+pointing to)  
+• All logs of all local commits you have ever made (including revert 
+changes)  
+
+
+Git creates a hidden folder to keep track of changes
+
+
+Git Adding New Files
+So let's add some files, or create a new file using your favourite text editor. Then save or move it to the folder you just created.
+
+Let's go back to the terminal and list the files in our current working directory:
+
+$ ls
+ls will list the files in the directory. We can see that index.html is there.
+Then we check the Git status and see if it is a part of our repo:
+
+git status
+
+Now Git is aware of the file, but has not added it to our repository!
+
+Files in your Git repository folder can be in one of 2 states:
+
+Tracked - files that Git knows about and are added to the repository
+Untracked - files that are in your working directory, but not added to the repository
+
+ When you first add files to an empty repository, they are all untracked. To get Git to track them, you need to stage them, or add them to the staging environment.
+
+
+Git Staging Environment
+
+ Staging refers to the process of preparing changes before committing them to the repository.
+
+As you are working, you may be adding, editing and removing files. But whenever you hit a milestone or finish a part of the work, you should add the files to a Staging Environment.
+
+
+git add index.html
+
+The file should be Staged. Let's check the status:
+
+git status
+
+
+Git Add More than One File
+You can also stage more than one file at a time. Let's add 2 more files to our working folder. Use the text editor again.
+
+A README.md file that describes the repository (recommended for all repositories):
+A basic external style sheet:
+And update index.html to include the stylesheet:
+
+
+Now add all files in the current directory to the Staging Environment:
+
+git add --all
+
+Using --all instead of individual filenames will stage all changes (new, modified, and deleted) files.
+
+Now all 3 files are added to the Staging Environment, and we are ready to do our first commit.
+
+Note: The shorthand command for git add --all is git add -A
+
+
+
+
+******
+Staging is usefull because You can choose which changes to commit, instead of committing everything at once. or
+If you want to remove changes from the staging area before committing, you can use the following command:
+
+git reset <filename>
+
+or to unstage all files:
+
+git reset
+
+If You Want to Discard Changes Completely: 
+
+git restore <filename>
+
+*****
+
+Git Commit
+
+
+*Committing is basically saving the changes the developer made to the local repository.   It is a point in the project you can go back to if you find a bug, or want to make a change.
+
+When we commit, we should always include a message.
+
+By adding clear messages to each commit, it is easy for yourself (and others) to see what has changed and when.
+
+git commit -m "First release of Hello World!"
+
+
+Git Commit without Stage
+Sometimes, when you make small changes, using the staging environment seems like a waste of time. It is possible to commit changes directly, skipping the staging environment. The -a option will automatically stage every changed, already tracked file.
+
+Let's add a small update to index.html:
+
+<p>A new line in our file!</p>
+
+And check the status of our repository. But this time, we will use the --short option to see the changes in a more compact way:
+
+git status --short
+
+
+Note: Short status flags are:
+
+?? - Untracked files
+A - Files added to stage
+M - Modified files
+D - Deleted files
+
+
+We see the file we expected is modified. So let's commit it directly:
+
+git commit -a -m "Updated index.html with a new line"
+
+
+To view the history of commits for a repository, you can use the log command:
+
+git log
+
+git log --oneline
+
+
+
+
+Git Branch
+
+In Git, a branch is a new/separate version of the main repository.
+
+Branches allow you to work on different parts of a project without impacting the main branch.
+
+When the work is complete, a branch can be merged with the main project.
+
+New Git Branch
+Let add some new features to our index.html page.
+
+git branch hello-world-images
+
+Now we created a new branch called "hello-world-images"
+Let's confirm that we have created a new branch:
+
+git branch
+
+We can see the new branch with the name "hello-world-images", but the * beside master specifies that we are currently on that branch.
+
+checkout is the command used to check out a branch. Moving us from the current branch, to the one specified at the end of the command:
+
+git checkout hello-world-images
+
+
+Now we have moved our current workspace from the master branch, to the new branch
+
+Open your favourite editor and make some changes.
+
+For this example, we added an image (img_hello_world.jpg) to the working folder and a line of code in the index.html file:
+
+Now check the status of the current branch:
+
+git status / git status --short
+
+So let's go through what happens here:
+
+There are changes to our index.html, but the file is not staged for commit
+img_hello_world.jpg is not tracked
+So we need to add both files to the Staging Environment for this branch:
+
+git add --all
+
+Check the status of the branch:
+git status
+
+Let us commit them:
+git commit -m "Added image to Hello World"
+
+
+Now we have a new branch, that is different from the master branch.
+
+
+Switching Between Branches
+Now let's see just how quick and easy it is to work with different branches, and how well it works.
+
+We are currently on the branch hello-world-images. We added an image to this branch, so let's list the files in the current directory:
+
+$ ls
+
+We can see the new file img_hello_world.jpg, and if we open the html file, we can see the code has been altered. All is as it should be.
+
+Now, let's see what happens when we change branch to master
+
+git checkout master
+
+$ ls
+
+The new image is not a part of this branch.
+
+img_hello_world.jpg is no longer there! And if we open the html file, we can see the code reverted to what it was before the alteration.
+
+
+Emergency Branch
+Now imagine that we are not yet done with hello-world-images, but we need to fix an error on master.
+
+I don't want to mess with master directly, and I do not want to mess with hello-world-images, since it is not done yet.
+
+So we create a new branch to deal with the emergency:
+
+Note: Using the -b option on checkout will create a new branch, and move to it, if it does not exist
+
+git checkout -b emergency-fix
+
+
+Now we have created a new branch from master, and changed to it. We can safely fix the error without disturbing the other branches.
+
+Let's fix our imaginary error:
+
+-----<p>A new line in our file!</p>
+
+++++++<p>This line is here to show how merging works.</p>
+
+
+We have made changes in this file, and we need to get those changes to the master branch.
+
+Check the status:
+
+git status
+
+
+stage the file, and commit:
+
+git add index.html
+git commit -m "updated index.html with emergency fix"
+
+Now we have a fix ready for master, and we need to merge the two branches
+
+
+Git Branch Merge
+
+We have the emergency fix ready, and so let's merge the master and emergency-fix branches.
+
+First, we need to change to the master branch:
+
+git checkout master
+
+Now we merge the current branch (master) with emergency-fix:
+
+git merge emergency-fix
+
+
+Since the emergency-fix branch came directly from master, and no other changes had been made to master while we were working, Git sees this as a continuation of master. So it can "Fast-forward", just pointing both master and emergency-fix to the same commit.
+
+As master and emergency-fix are essentially the same now, we can delete emergency-fix, as it is no longer needed:
+
+git branch -d emergency-fix
+
+
+Merge Conflict
+Now we can move over to hello-world-images and keep working. Add another image file (hello-git-img.png) and change index.html:
+
+
+<div>
+  <img src="hello-git-image.png" alt="hello-git-image" style="width: 500px;height: 500px;">
+</div>
+
+
+Now, we are done with our work here and can stage and commit for this branch:
+
+git add --all
+git commit -m "added new image"
+
+We see that index.html has been changed in both branches. Now we are ready to merge hello-world-images into master. But what will happen to the changes we recently made in master?
+
+
+git checkout master
+git merge hello-world-images
+
+The merge failed, as there is conflict between the versions for index.html. Let us check the status:
+
+git status
+
+This confirms there is a conflict in index.html, but the image files are ready and staged to be committed.
+
+So we need to fix that conflict. Open the file in our editor:
+
+We can see the differences between the versions and edit it like we want:
+
+Now we can stage index.html and check the status
+
+git add index.html
+git status
+
+
+The conflict has been fixed, and we can use commit to conclude the merge:
+
+git commit -m "merged with hello-world-images after fixing conflicts"
+
+
+And delete the hello-world-images branch:
+
+git branch -d hello-world-images
+
+
+
+
+
+
