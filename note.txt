@@ -440,7 +440,7 @@ We can also verify by showing the differences between our local master and origi
 merge combines the current branch, with a specified branch.
 
 We have confirmed that the updates are as expected, and we can merge our current branch (master) with origin/master
-
+  
 git merge origin/master
 
 git status

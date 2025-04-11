@@ -1,0 +1,103 @@
+Fork a Repository
+A fork is a copy of a repository. This is useful when you want to contribute to someone else's project or start your own project based on theirs.
+
+fork is not a command in Git, but something offered in GitHub and other repository hosts. Let's start by logging in to GitHub, and fork the repository:
+
+https://github.com/w3schools-test/w3schools-test.github.io
+
+Now we have our own copy of w3schools-test.github.io
+
+
+Now let's look at how we add a local copy of this for us to work with
+
+Clone a Fork from GitHub
+Now we have our own fork, but only on GitHub. We also want a clone on our local Git to keep working on it.
+
+A clone is a full copy of a repository, including all logging and versions of files.
+
+Move back to the original repository, and click the green "Code" button to get the URL to clone:
+
+https://github.com/w3schools-test/w3schools-test.github.io.git
+
+Open your Git bash and clone the repository:
+
+
+Note: To specify a specific folder to clone to, add the name of the folder after the repository URL, like this: 
+git clone https://github.com/w3schools-test/w3schools-test.github.io.git myfolder
+
+git clone https://github.com/w3schools-test/w3schools-test.github.io.
+
+
+Take a look in your file system, and you will see a new directory named after the cloned project
+
+$ ls
+
+Navigate to the new directory, and check the status:
+
+$ cd fork
+
+git status
+
+And check the log to confirm that we have the full repository data:
+
+git log
+
+Configuring Remotes
+
+Basically, we have a full copy of a repository, whose origin we are not allowed to make changes to.
+
+Let's see how the remotes of this Git is set up:
+
+git remote -v
+
+* the -v flag is used for getting the url
+
+
+We see that origin is set up to the original "w3schools-test" repository, we also want to add our own fork.
+
+First, we rename the original origin remote:
+
+git remote rename origin upstream
+git remote -v
+
+Then fetch the URL of our own fork:
+
+https://github.com/abdutech1/practice-w3schools-test.github.io.git
+
+And add that as origin:
+
+git remote add origin https://github.com/abdutech1/practice-w3schools-test.github.io.git
+
+
+git remote -v
+
+Note: According to Git naming conventions, it is recommended to name your own repository origin, and the one you forked for upstream
+
+Now we have 2 remotes:
+
+origin - our own fork, where we have read and write access
+upstream - the original, where we have read-only access
+
+
+Push Changes to Our GitHub Fork
+We have made a lot of changes to our local Git.
+
+Now we push them to our GitHub fork:
+
+commit the changes:
+
+
+git push origin
+
+Go to GitHub, and we see that the repository has a new commit. And we can send a Pull Request to the original repository:
+
+Click that and create a pull request:
+
+Remember to add an explanation for the administrators
+
+
+
+
+
+
+
