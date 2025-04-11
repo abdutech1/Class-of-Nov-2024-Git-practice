@@ -1,0 +1,33 @@
+Q1: Create a new directory called projects inside your home directory.
+
+Q2: Inside projects, create another directory called mern_app.
+
+Q3: Run a command to display the full path of your current directory.
+
+Q4: Navigate to the projects directory from your home folder.
+
+Q5: Move from mern_app back to the projects directory using a relative path.
+
+Q6: List all files and folders in your current directory.
+
+Q7: List all files, including hidden ones.
+
+Q8: Inside mern_app, create a new file called server.js.
+
+Q9: Create multiple files: index.html, style.css, and script.js in the same directory.
+
+Q10: Use echo to print "Welcome to Bash scripting!" on the terminal.
+
+Q11: Use echo to create a file called README.md.
+
+Q12: Use echo to create a file called config.json and write { "mode": "development" } inside it.
+
+Q13: Rename server.js to app.js.
+
+Q14: Move app.js into a folder named backend.
+
+Q15: Try to remove an empty directory called test_folder.
+
+Q16: Delete a file named old_notes.txt.
+
+Q17: Try to remove a directory called logs that contains files.

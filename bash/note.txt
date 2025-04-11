@@ -1,0 +1,148 @@
+1. Mastering the Command Line: An Introduction to Bash
+
+1.1.  Understanding Interfaces: GUI vs. CLI
+
+When interacting with a computer, we use interfaces—a bridge between the user and the system. There are two main types:
+
+Graphical User Interface (GUI): Uses visual elements like windows, buttons, and icons. Examples include Windows Explorer and macOS Finder.
+
+Command-Line Interface (CLI):
+
+GUIs, allow a user to accomplish daily tasks by easily interacting with
+windows and icons. However, there are commands that need to be manually
+entered via texts to instruct the computer directly. We usually do this through
+terminals. Terminals, also known as command lines or consoles the “black” screen
+programmers use to send text commands to do things like navigate through a folder
+or copy a file and do more complex tasks
+
+
+ Shell: When you type commands on your terminal, what you’ve typed must be
+understood before the computer executes the task. Shell is the software that
+interprets the commands typed on terminal so that your computer understands them
+and return a response to your command. There are different shells
+(programs/CLI/script) that we can use to manipulate our OS. Example: Bash (for
+Mac and Linus OS), Command Prompt (CMD) or PowerShell. We will focus on
+Bash in our course.
+
+
+ Bash: It is an acronym for Bourne Again Shell which is a command-line interface
+(CLI) and is currently the most widely used shell.
+• Bash is a type of shell (CLI) that we can use to communicate/instruct our OS.
+Meaning, we use Bash when we want to control our OS without having to navigate
+menus, options, and windows within a GUI
+
+
+1.2. Why are we learning Bash and Bash script for this course?
+
+* There are web developer tools which operate through shell only: There are software/application can’t be download and installed in your computer. 
+     Example: React
+
+* For local backend development: you will need a shell scripting knowledge for setting up your own local server on Node.js
+Example: initiating your local Node.js server, keeping your server running
+(with the nodemon command), installing modules/packages 
+
+* Better utilization of the Git Version Control tool
+
+* Great control over your operating system
+
+As a MERN stack developer, mastering the CLI is essential for:
+
+Navigating the file system efficiently.
+
+Running scripts and automating tasks.
+
+Using Git for version control.
+
+Managing servers and deployments.
+
+1.3. What do we need to write Bash script?
+
+
+You need to have a terminal to write bash script on.
+* If you have a Mac computer, you can use the default built-in terminal on your Mac.
+* For Windows computers, you can use applications such as GitBash and Cygwin
+  Git Bash comes included as part of the Git for Windows package.
+* If you have not downloaded and installed Git, please download and install
+Git for Windows here https://git-scm.com/ , just like other Windows applications. 
+
+
+* Watch this video for more... 
+
+
+https://www.youtube.com/watch?time_continue=2&v=USZqL4QDXjU&embeds_referring_euri=https%3A%2F%2Fwww.google.com%2Fsearch%3Fq%3Dhow%2Bdo%2BI%2Bdownload%2Bgitbash%253F%26oq%3Dhow%2Bdo%2BI%2Bdownload%2Bgitbash%253F%26gs_lcrp%3DEgZjaHJvbWUyBggAEEUYOTIJCAE&source_ve_path=MzY4NDIsMjg2NjY
+
+
+
+Activity 1.1 downloaded and installed Git
+
+
+1.4 The main Bash commands you must know
+
+▪ mkdir: Makes/creates a new folder. It is the same as you right clicking
+and creating a folder
+
+▪ pwd: It prints full path of your current/working directory
+
+▪ cd: It will change the directory you are currently in so that you can
+manipulate the different files and directories in your system. It is
+basically going.. to a different folder and double clicking it
+
+▪ ls: Lists contents of the current directory, whether files or folders.
+It’s the same as you opening a folder in file explorer to see its
+contents 
+
+▪ touch: This is going to be the easiest way to create a new file in a
+current directory. It is the same as right clicking on a folder and
+creating a new file
+
+▪ echo:
+  •    Using echo without option: It prints text to the terminal window.
+  Example: echo “hello world” prints “hello world” on terminal
+  • Using echo with fie name only: It creates a file. Example: echo >
+  style.css creates the style.css file
+
+  • Using echo with text and file name: creates the file and writes the text in
+  the file. Example: echo "Hello" > index.html, creates an index.html file
+  and types “Hello” on the file 
+
+▪ mv: It moves or renames directory. 
+
+Example: mv style.css CSS. This command will move the style.css file
+found in your current directory to the CSS folder
+
+
+
+▪ rm and rmdir:
+
+
+    1. rmdir (Remove Directory)
+      Removes empty directories only.
+      If the directory contains files or subdirectories, it won’t be deleted
+
+    2. rm (Remove File)
+      Removes files but does not remove directories by default.
+
+    3. rm -r (Recursive Remove)
+      Removes directories and their contents (files + subdirectories).
+      -r stands for recursive, meaning it deletes everything inside the directory.
+
+
+****Read about grep, chmod and about the defination of this total 10
+drwxr-xr-x 1 hp 197121   0 Apr  1 23:51 ./
+drwxr-xr-x 1 hp 197121   0 Jan 24 10:01 ../
+drwxr-xr-x 1 hp 197121   0 Apr  1 23:58 bash/
+-rw-r--r-- 1 hp 197121   0 Apr  1 23:13 bash.js
+drwxr-xr-x 1 hp 197121   0 Apr  2 00:11 cli/
+-rw-r--r-- 1 hp 197121  16 Apr  1 23:22 inde2x.html
+-rw-r--r-- 1 hp 197121 245 Apr  2 00:13 index.html
+
+
+#!/bin/bash
+
+
+unzip 
+
+
+
+
+
